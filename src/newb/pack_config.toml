@@ -3,7 +3,7 @@ version = [0, 15, 6]
 min_supported_mc_version = [1, 20, 80]
 url = "https://github.com/alyow/newb-reimagined/"
 authors = ["al_yoww"]
-materials = ["Sky", "LegacyCubemap", "Clouds", "EndSky", "SunMoon", "RenderChunk", "Actor", "Stars"]
+materials = ["Sky", "LegacyCubemap", "Clouds", "EndSky", "SunMoon", "RenderChunk", "Actor"]
 
 [description]
 # %w = patch warning, %v = version
