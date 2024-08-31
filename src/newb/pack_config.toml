@@ -1,4 +1,4 @@
-name = "Newb Reimagined"
+name = "Newb Reimagined §bOptimized§r"
 version = [0, 15, 65]
 min_supported_mc_version = [1, 21, 20]
 description = '''
@@ -9,14 +9,14 @@ description = '''
 ''' # %w = patch warning, %v = version
 authors = ["al_yoww", "devendrn"]
 url = "https://github.com/alyow/newb-reimagined/"
-uuid = "95f774cf-4afa-73e7-a21a-72146307b1d2" # Use https://www.uuidgenerator.net/version4
+uuid = "4acd8e83-07b6-4bc4-a18b-c3eedf155b46" # Use https://www.uuidgenerator.net/version4
 materials = ["Sky", "LegacyCubemap", "Clouds", "EndSky", "SunMoon", "RenderChunk", "Actor"]
 
 [info] 
 copyright = '''
 Copyright (c) %a
 
-**Important Note:** Redistribution of this resource pack with links other than the official ones provided by the creator is strictly prohibited.
+**Important Note:** Redistribution of this resource pack with links other than the official ones provided by the creator is strictly prohibited and do not use any assets from this shader without permission!
 ''' # %a = authors
 credits = '''
 '''
@@ -25,43 +25,22 @@ credits = '''
 # right-most subpack is enabled by default
 
 [[subpack]]
-define = "DEF_VANILLA"
-materials = ["RenderChunk", "Clouds"]
-description = '''
-§bNewb Reimagined§r\n Vanilla Clouds\n No Aurora\n Wavy Water
-'''
-
-[[subpack]]
-define = "DEF_SOFT"
-materials = ["RenderChunk", "Clouds"]
-description = '''
-§bNewb Reimagined§r\n Soft Clouds\n Aurora §bLight Blue §aGreen§r\n Wavy Water
-'''
-
-[[subpack]]
-define = "DEF_DC"
-materials = ["RenderChunk", "Clouds"]
-description = '''
-§bNewb Reimagined§r\n Double Cloud Layers\n Aurora §bLight Blue §aGreen§r\n Reimagined Water
-'''
-
-[[subpack]]
-define = "DEF_GR"
+define = "DEF_LOW"
 materials = ["RenderChunk", "Clouds", "Sky"]
 description = '''
-§bNewb Reimagined§r\n Rounded Clouds, Aurora §bLight Blue §aGreen§r\n Ground Reflection, Rainbow\n Wavy Water
+§bNewb Reimagined§r Optimized Version
 '''
 
 [[subpack]]
-define = "DEF_AURORA"
+define = "DEF_MEDIUM"
 materials = ["RenderChunk", "Clouds"]
 description = '''
-§bNewb Reimagined§r\n Rounded Clouds, Aurora §bLight Blue §aGreen§r\n Blinking Torch\n Reimagined Water
+§bNewb Reimagined§r Optimized Version
 '''
 
 [[subpack]]
 define = "DEFAULT"
 materials = []
 description = '''
-§bNewb Reimagined Default§r\n Rounded Clouds\n No Aurora\n Reimagined Water
+§bNewb Reimagined§r Optimized Version
 '''
