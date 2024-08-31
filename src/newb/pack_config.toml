@@ -1,14 +1,14 @@
-name = "Newb X Legacy"
-version = [0, 15, 0]
+name = "Newb Reimagined"
+version = [0, 15, 65]
 min_supported_mc_version = [1, 21, 20]
 description = '''
 §c%w
-§7- An enchanced vanilla shader for Minecraft!
+§7A shader that have a vanilla minecraft feel but improved
 %v
-§3https://devendrn.github.io/newb-shader/
+§3https://github.com/alyow/newb-reimagined/
 ''' # %w = patch warning, %v = version
-authors = ["devendrn"]
-url = "https://devendrn.github.io/newb-shader/"
+authors = ["al_yoww", "devendrn"]
+url = "https://github.com/alyow/newb-reimagined/"
 uuid = "95f774cf-4afa-73e7-a21a-72146307b1d2" # Use https://www.uuidgenerator.net/version4
 materials = ["Sky", "LegacyCubemap", "Clouds", "EndSky", "SunMoon", "RenderChunk", "Actor"]
 
@@ -25,50 +25,43 @@ credits = '''
 # right-most subpack is enabled by default
 
 [[subpack]]
-define = "ROUNDED_CLOUDS"
-materials = ["Clouds"]
+define = "DEF_VANILLA"
+materials = ["RenderChunk", "Clouds"]
 description = '''
-Rounded Clouds
+§bNewb Reimagined§r\n Vanilla Clouds\n No Aurora\n Wavy Water
 '''
 
 [[subpack]]
-define = "BOX_CLOUDS"
-materials = ["Clouds", "RenderChunk"]
+define = "DEF_SOFT"
+materials = ["RenderChunk", "Clouds"]
 description = '''
-Box Clouds
+§bNewb Reimagined§r\n Soft Clouds\n Aurora §bLight Blue §aGreen§r\n Wavy Water
 '''
 
 [[subpack]]
-define = "CHUNK_ANIM"
-materials = ["RenderChunk"]
+define = "DEF_DC"
+materials = ["RenderChunk", "Clouds"]
 description = '''
-Chunk loading animation
+§bNewb Reimagined§r\n Double Cloud Layers\n Aurora §bLight Blue §aGreen§r\n Reimagined Water
 '''
 
 [[subpack]]
-define = "NO_WAVE_NO_FOG"
-materials = ["RenderChunk"]
+define = "DEF_GR"
+materials = ["RenderChunk", "Clouds", "Sky"]
 description = '''
-No fog and wave effects
+§bNewb Reimagined§r\n Rounded Clouds, Aurora §bLight Blue §aGreen§r\n Ground Reflection, Rainbow\n Wavy Water
 '''
 
 [[subpack]]
-define = "NO_FOG"
-materials = ["RenderChunk"]
+define = "DEF_AURORA"
+materials = ["RenderChunk", "Clouds"]
 description = '''
-No fog effect
-'''
-
-[[subpack]]
-define = "NO_WAVE"
-materials = ["RenderChunk"]
-description = '''
-No wave effects
+§bNewb Reimagined§r\n Rounded Clouds, Aurora §bLight Blue §aGreen§r\n Blinking Torch\n Reimagined Water
 '''
 
 [[subpack]]
 define = "DEFAULT"
 materials = []
 description = '''
-Default
+§bNewb Reimagined Default§r\n Rounded Clouds\n No Aurora\n Reimagined Water
 '''
