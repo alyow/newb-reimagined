@@ -1,15 +1,15 @@
-name = "Newb Reimagined §bOptimized§r"
+name = "Newb Reimagined"
 version = [0, 15, 65]
 min_supported_mc_version = [1, 21, 20]
 description = '''
 §c%w
-§7A shader that have a vanilla minecraft feel but improved
+§7Shader that have a vanilla minecraft feel but improved
 %v
 §3https://github.com/alyow/newb-reimagined/
 ''' # %w = patch warning, %v = version
 authors = ["al_yoww", "devendrn"]
 url = "https://github.com/alyow/newb-reimagined/"
-uuid = "4acd8e83-07b6-4bc4-a18b-c3eedf155b46" # Use https://www.uuidgenerator.net/version4
+uuid = "b1a6a0f0-8279-4138-b09c-99391d4ac8ed" # Use https://www.uuidgenerator.net/version4
 materials = ["Sky", "LegacyCubemap", "Clouds", "EndSky", "SunMoon", "RenderChunk", "Actor"]
 
 [info] 
@@ -25,22 +25,43 @@ credits = '''
 # right-most subpack is enabled by default
 
 [[subpack]]
-define = "DEF_LOW"
-materials = ["RenderChunk", "Clouds", "Sky"]
+define = "COMP_VANILLA"
+materials = ["RenderChunk", "Clouds", "LegacyCubemap", "Sky", "EndSky"]
 description = '''
-§bNewb Reimagined§r Optimized Version
+§bNewb Reimagined§r\n Soft Clouds\n Aurora §bLight Blue §aGreen§r\n Wavy Water
 '''
 
 [[subpack]]
-define = "DEF_MEDIUM"
-materials = ["RenderChunk", "Clouds"]
+define = "COMP_SOFT"
+materials = ["RenderChunk", "Clouds", "LegacyCubemap", "Sky", "EndSky"]
 description = '''
-§bNewb Reimagined§r Optimized Version
+§bNewb Reimagined§r\n Soft Clouds\n Aurora §bLight Blue §aGreen§r\n Wavy Water
 '''
 
 [[subpack]]
-define = "DEFAULT"
-materials = []
+define = "COMP_DC"
+materials = ["RenderChunk", "Clouds", "LegacyCubemap", "Sky", "EndSky"]
 description = '''
-§bNewb Reimagined§r Optimized Version
+§bNewb Reimagined§r\n Soft Clouds\n Aurora §bLight Blue §aGreen§r\n Wavy Water
+'''
+
+[[subpack]]
+define = "COMP_GR"
+materials = ["RenderChunk", "Clouds", "LegacyCubemap", "Sky", "EndSky"]
+description = '''
+§bNewb Reimagined§r\n Soft Clouds\n Aurora §bLight Blue §aGreen§r\n Wavy Water
+'''
+
+[[subpack]]
+define = "COMP_AURORA"
+materials = ["RenderChunk", "Clouds", "LegacyCubemap", "Sky", "EndSky"]
+description = '''
+§bNewb Reimagined§r\n Soft Clouds\n Aurora §bLight Blue §aGreen§r\n Wavy Water
+'''
+
+[[subpack]]
+define = "COMP_DEF"
+materials = ["RenderChunk", "Clouds", "LegacyCubemap", "Sky", "EndSky"]
+description = '''
+§bNewb Reimagined§r\n Soft Clouds\n Aurora §bLight Blue §aGreen§r\n Wavy Water
 '''
