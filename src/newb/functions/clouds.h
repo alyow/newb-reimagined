@@ -43,9 +43,17 @@ vec4 renderCloudsSimple(vec3 pos, highp float t, float rain, vec3 zenithCol, vec
 
 // rounded clouds 3D density map
 float cloudDf(vec3 pos, float rain) {
+	#ifdef NL_CLOUD2_NOISE
+	pos.xz += NL_CLOUD2_NOISE_INTENSITY*noise(NL_CLOUD2_NOISE_SCALE*pos.xyz);
+    #endif
+
+    #ifdef NL_CLOUD2_RAND
+	pos.xyz += 0.2*rand(0.2*pos.xz);
+    #endif
+    
   vec2 p0 = floor(pos.xz);
   vec2 u = smoothstep(0.999*NL_CLOUD2_SHAPE, 1.0, pos.xz-p0);
-  
+
   // rain transition
   vec2 t = vec2(0.1001+0.2*rain, 0.1+0.2*rain*rain);
 
@@ -54,7 +62,7 @@ float cloudDf(vec3 pos, float rain) {
     mix(randt(p0+vec2(0.0,1.0), t),randt(p0+vec2(1.0,1.0), t), u.x),
     u.y
   );
-	
+
   // round y
   float b = 1.0 - 1.9*smoothstep(NL_CLOUD2_SHAPE, 2.0 - NL_CLOUD2_SHAPE, 2.0*abs(pos.y-0.5));
   return smoothstep(0.2, 1.0, n * b);
@@ -70,7 +78,7 @@ vec4 renderClouds(vec3 vDir, vec3 vPos, float rain, float time, vec3 fogCol, vec
   deltaP.xz = (NL_CLOUD2_SCALE*height)*vDir.xz/(0.02+0.98*abs(vDir.y));
   //deltaP.xyz = (NL_CLOUD2_SCALE*height)*vDir.xyz;
   //deltaP.y = abs(deltaP.y);
-  
+
   // local cloud pos
   vec3 pos;
   pos.y = 0.0;
@@ -78,35 +86,47 @@ vec4 renderClouds(vec3 vDir, vec3 vPos, float rain, float time, vec3 fogCol, vec
   pos += deltaP;
 
   deltaP /= -float(NL_CLOUD2_STEPS);
-  
+
   // alpha, gradient
-  vec2 d = vec2(0.0,1.0);
+  vec2 d = vec2(0.0,NL_CLOUDS_SHAPE_DENSITY);
   for (int i=1; i<=NL_CLOUD2_STEPS; i++) {
     float m = cloudDf(pos, rain);
-    
+
     d.x += m;
     d.y = mix(d.y, pos.y, m);
-    
+
     //if (d.x == 0.0 && i > NL_CLOUD2_STEPS/2) {
     //	break;
-    //} 
+    //}
 
     pos += deltaP;
   }
-  //d.x *= vDir.y*vDir.y; 
+  //d.x *= vDir.y*vDir.y;
   d.x *= smoothstep(0.03, 0.1, d.x);
   d.x = d.x / ((float(NL_CLOUD2_STEPS)/NL_CLOUD2_DENSITY) + d.x);
-  
+
   if (vPos.y > 0.0) { // view from bottom
     d.y = 1.0 - d.y;
   }
 
-  d.y = 1.0 - 0.7*d.y*d.y;
- 
-  vec4 col = vec4(0.6*skyCol, d.x);
-  col.rgb += (vec3(0.03,0.05,0.05) + 0.8*fogCol)*d.y;
-  col.rgb *= 1.0 - 0.5*rain;
+  d.y = 1.0 - NL_CLOUDS_SHADOW_INTENSITY*d.y*d.y;
 
+  float night = max(1.1 - 3.0*max(fogCol.b, fogCol.g), 0.0);
+  
+  vec4 col = vec4(0.4*skyCol, d.x);
+  col.rgb += (skyCol + NL_CLOUDS_BRIGHTNESS*fogCol)*d.y;
+  col.rgb *= 1.0 - 0.5*rain;
+  col.rgb *= 1.0 - 0.8*night;
+  
+    #ifdef NL_NIGHT_CLOUDS_INTENSITY
+    float op = col.a - d.y;
+    op = col.a - d.x;
+    
+    op = NL_NIGHT_CLOUDS_INTENSITY;
+    
+    col.a *= op;
+    #endif
+    
   return col;
 }
 

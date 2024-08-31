@@ -37,7 +37,7 @@ vec4 nlWater(
     waterRefl = getSkyRefl(horizonEdgeCol, horizonCol, zenithCol, viewDir, FOG_COLOR, t, -wPos.y, rainFactor, end, underWater, nether);
 
     // cloud and aurora reflection
-    #if defined(NL_WATER_CLOUD_REFLECTION)
+    #if defined(NL_WATER_AURORA_REFL)
       if (wPos.y < 0.0) {
         vec2 parallax = viewDir.xz/viewDir.y;
         vec2 projectedPos = wPos.xz - parallax*100.0*(1.0-bump);
@@ -49,9 +49,12 @@ vec4 nlWater(
           waterRefl += 2.0*aurora.rgb*aurora.a*fade;
         #endif
 
-        #if NL_CLOUD_TYPE == 1
+        #if NL_WATER_CLREFL_TYPE == 1
           vec4 clouds = renderCloudsSimple(projectedPos.xyy, t, rainFactor, zenithCol, horizonCol, horizonEdgeCol);
-          waterRefl = mix(waterRefl, 1.5*clouds.rgb, clouds.a*fade);
+          waterRefl = mix(waterRefl, 2.0*clouds.rgb, clouds.a*fade);
+        #elif NL_WATER_CLREFL_TYPE == 2
+          vec4 clouds = renderClouds(viewDir, projectedPos.xyy, rainFactor, t, horizonCol, zenithCol);
+          waterRefl = mix(waterRefl, 2.3*clouds.rgb, clouds.a*fade);
         #endif
       }
     #endif
