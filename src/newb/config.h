@@ -104,8 +104,8 @@
 #define NL_WATER_TEX_OPACITY 2.72    // 0.0 plain water ~ 1.0 vanilla water texture
 #define NL_WATER_WAVE                // [toggle] wave effect
 #define NL_WATER_FOG_FADE            // [toggle] fog fade for water
-#define NL_WATER_AURORA_REFL         // [toggle] aurora reflection
-#define NL_WATER_CLREFL_TYPE 1       // 1:soft, 2:rounded ~ cloud type reflection
+//#define NL_WATER_AURORA_REFL         // [toggle] aurora reflection
+//#define NL_WATER_CLREFL_TYPE 1       // 1:soft, 2:rounded ~ cloud type reflection
 #define NL_WATER_TINT vec3(0.223,0.411,0.93)
 
 /* Underwater */
@@ -134,7 +134,7 @@
 /* Rounded cloud Settings */
 #define NL_CLOUD2_THICKNESS 2.68      // 0.5 slim ~ 5.0 fat
 #define NL_CLOUD2_RAIN_THICKNESS 2.41 // 0.5 slim ~ 5.0 fat
-#define NL_CLOUD2_STEPS 7             // 3 low quality ~ 16 high quality
+#define NL_CLOUD2_STEPS 5             // 3 low quality ~ 16 high quality
 #define NL_CLOUD2_SCALE 0.036         // 0.003 large ~ 0.3 tiny
 #define NL_CLOUD2_SHAPE 0.631         // 0.0 round ~ 1.0 box
 #define NL_CLOUD2_DENSITY 600.0       // 1.0 blurry ~ 100.0 sharp
@@ -190,67 +190,47 @@
   Build tool will enable corresponding flags when compiling. 
 */
 
-#ifdef COMP_VANILLA
-  #undef NL_CLOUD_TYPE 
-  #undef NL_WATER_TRANSPARENCY
-  #undef NL_WATER_BUMP
-  #undef NL_WATER_TEX_OPACITY
-  #undef NL_WATER_CLREFL_TYPE
+#ifdef COMP_LOW
+  #undef NL_CLOUD_TYPE
+  #undef NL_FOG_TYPE
+  #undef NL_PLANTS_WAVE
+  #undef NL_LANTERN_WAVE
+  #undef NL_WAVE_SPEED
+  #undef NL_GLOW_LEAK
+  #undef NL_UNDERWATER_WAVE
+  #undef NL_GODRAY
+  #define NL_GODRAY 0.0
+  #define NL_FOG_TYPE 0
   #define NL_CLOUD_TYPE 0
-  #define NL_WATER_TRANSPARENCY 0.35
-  #define NL_WATER_BUMP 0.062
-  #define NL_WATER_TEX_OPACITY 0.9
+  #define NO_WAVE
 #endif
 
-#ifdef COMP_SOFT
+#ifdef COMP_MEDIUM
   #undef NL_CLOUD_TYPE
-  #undef NL_WATER_TRANSPARENCY
-  #undef NL_WATER_BUMP
-  #undef NL_WATER_TEX_OPACITY
-  #define NL_WATER_CLREFL_TYPE 1
+  #undef NL_FOG_TYPE
+  #undef NL_PLANTS_WAVE
+  #undef NL_LANTERN_WAVE
+  #undef NL_WAVE_SPEED
+  #undef NL_GLOW_LEAK
+  #undef NL_UNDERWATER_WAVE
+  #undef NL_GODRAY
+  #define NL_GODRAY 0.0
+  #define NL_FOG_TYPE 0
   #define NL_CLOUD_TYPE 1
-  #define NL_WATER_TRANSPARENCY 0.35
-  #define NL_WATER_BUMP 0.062
-  #define NL_WATER_TEX_OPACITY 0.9
-  #define NL_AURORA 2.0
-#endif
-
-#ifdef COMP_DC
-  #undef NL_CLOUD_TYPE 
-  #undef NL_WATER_CLREFL_TYPE
-  #define NL_CLOUD_TYPE 2
-  #define NL_CLOUD2_MULTILAYER
-  #define NL_AURORA 3.0
-#endif
-
-#ifdef COMP_GR
-  #undef NL_CLOUD_TYPE
-  #undef NL_WATER_TRANSPARENCY
-  #undef NL_WATER_BUMP
-  #undef NL_WATER_TEX_OPACITY
-  #undef NL_WATER_CLREFL_TYPE
-  #define NL_CLOUD_TYPE 2
-  #define NL_WATER_TRANSPARENCY 0.35
-  #define NL_WATER_BUMP 0.062
-  #define NL_WATER_TEX_OPACITY 0.9
-  #define NL_RAINBOW
-  #define NL_AURORA 3.0
-  #define NL_GROUND_REFL 0.6
-  #define NL_GROUND_AURORA_REFL
-#endif
-
-#ifdef COMP_AURORA
-  #undef NL_CLOUD_TYPE
-  #undef NL_WATER_CLREFL_TYPE
-  #define NL_CLOUD_TYPE 2
-  #define NL_AURORA 3.0
-  #define NL_BLINKING_TORCH
+  #define NO_WAVE
 #endif
 
 #ifdef COMP_DEF
   #undef NL_CLOUD_TYPE
-  #undef NL_WATER_CLREFL_TYPE
+  #undef NL_FOG_TYPE
+  #undef NL_PLANTS_WAVE
+  #undef NL_LANTERN_WAVE
+  #undef NL_WAVE_SPEED
+  #undef NL_GLOW_LEAK
+  #undef NL_UNDERWATER_WAVE
+  #define NL_FOG_TYPE 2
   #define NL_CLOUD_TYPE 2
+  #define NO_WAVE
 #endif
 
 #endif

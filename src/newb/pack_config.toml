@@ -25,35 +25,14 @@ credits = '''
 # right-most subpack is enabled by default
 
 [[subpack]]
-define = "COMP_VANILLA"
+define = "COMP_LOW"
 materials = ["RenderChunk", "Clouds", "LegacyCubemap", "Sky", "EndSky"]
 description = '''
 §bNewb Reimagined§r\n Soft Clouds\n Aurora §bLight Blue §aGreen§r\n Wavy Water
 '''
 
 [[subpack]]
-define = "COMP_SOFT"
-materials = ["RenderChunk", "Clouds", "LegacyCubemap", "Sky", "EndSky"]
-description = '''
-§bNewb Reimagined§r\n Soft Clouds\n Aurora §bLight Blue §aGreen§r\n Wavy Water
-'''
-
-[[subpack]]
-define = "COMP_DC"
-materials = ["RenderChunk", "Clouds", "LegacyCubemap", "Sky", "EndSky"]
-description = '''
-§bNewb Reimagined§r\n Soft Clouds\n Aurora §bLight Blue §aGreen§r\n Wavy Water
-'''
-
-[[subpack]]
-define = "COMP_GR"
-materials = ["RenderChunk", "Clouds", "LegacyCubemap", "Sky", "EndSky"]
-description = '''
-§bNewb Reimagined§r\n Soft Clouds\n Aurora §bLight Blue §aGreen§r\n Wavy Water
-'''
-
-[[subpack]]
-define = "COMP_AURORA"
+define = "COMP_MEDIUM"
 materials = ["RenderChunk", "Clouds", "LegacyCubemap", "Sky", "EndSky"]
 description = '''
 §bNewb Reimagined§r\n Soft Clouds\n Aurora §bLight Blue §aGreen§r\n Wavy Water
