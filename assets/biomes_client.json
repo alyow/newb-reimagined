@@ -1,15 +1,359 @@
 {
   "biomes": {
+    //default
     "default": {
-      "water_surface_transparency": 0.65
-    },
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //plains
+    "plains": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //sunflower plains
+    "sunflower_plains": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //desert
+    "desert": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //extreme hills
+    "extreme_hills": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //forest
+    "forest": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //flower_forest
+    "flower_forest": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //taiga
+    "taiga": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //taiga mutated
+    "taiga_mutated": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    //swampland
     "swampland": {
-      "water_surface_transparency": 0.94
+      "water_surface_transparency": 0.60
     },
+    
+    //swampland mutated
     "swampland_mutated": {
-      "water_surface_transparency": 0.94
+      "water_surface_transparency": 0.60
     },
-    "the_end": {
+    //mangrove swamp
+    "mangrove_swamp": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //river
+    "river": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //hell
+    "hell": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //the end
+    "the_end": {                                                
+      "fog_identifier": "newb:fog_the_end"
+    },                                                
+    
+    //frozen river
+    "frozen_river": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //ice plains
+    "ice_plains": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //ice plains spikes
+    "ice_plains_spikes": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //ice mountains
+    "ice_mountains": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //mushroom island
+    "mushroom_island": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //mushroom island shore
+    "mushroom_island_shore": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //beach
+    "beach": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //desert hills
+    "desert_hills": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //forest hills
+    "forest_hills": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //taiga hills
+    "taiga_hills": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //extreme hills edge
+    "extreme_hills_edge": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //jungle
+    "jungle": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //bamboo jungle
+    "bamboo_jungle": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //jungle mutated
+    "jungle_mutated": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //jungle hills
+    "jungle_hills": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //bamboo jungle hills 
+    "bamboo_jungle_hills": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //jungle edge
+    "jungle_edge": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //stone beach
+    "stone_beach": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //cold beach
+    "cold_beach": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //birch forest
+    "birch_forest": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //birch forest hills
+    "birch_forest_hills": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //roofed forest
+    "roofed_forest": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //cold taiga
+    "cold_taiga": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //cold taiga mutated
+    "cold_taiga_mutated": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //cold taiga hills
+    "cold_taiga_hills": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //mega taiga
+    "mega_taiga": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //mega spruce taiga
+    "mega_spruce_taiga": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //mega taiga mutated
+    "mega_taiga_mutated": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //mega spruce taiga mutated
+    "mega_spruce_taiga_mutated": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //mega taiga hilla
+    "mega_taiga_hills": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //extreme hills with trees
+    "extreme_hills_plus_trees": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //extreme hills with trees mutated
+    "extreme_hills_plus_trees_mutated": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //extreme hills mutated
+    "extreme_hills_mutated": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //savanna
+    "savanna": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //savanna plateau
+    "savanna_plateau": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //savana mutated
+    "savanna_mutated": {
+      "water_surface_color": "#ccccff"																			// móōn
+    },                                                
+    
+    //mesa
+    "mesa": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //mesa bryce
+    "mesa_bryce": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //mesa mutated
+    "mesa_mutated": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //mesa plateau stone
+    "mesa_plateau_stone": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //mesa plateau
+    "mesa_plateau": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //ocean
+    "ocean": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //deep ocean
+    "deep_ocean": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //warm ocean
+    "warm_ocean": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //deep warm ocean
+    "deep_warm_ocean": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //lukewarm ocean
+    "lukewarm_ocean": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //deep lukewarm ocean
+    "deep_lukewarm_ocean": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //cold ocean
+    "cold_ocean": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //deep cold ocean
+    "deep_cold_ocean": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //frozen ocean
+    "frozen_ocean": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //deep frozen ocean
+    "deep_frozen_ocean": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //warped forest
+    "warped_forest": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //crimson forest
+    "crimson_forest": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //soulsand valley
+    "soulsand_valley": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //basalt deltas
+    "basalt_deltas": {
+      "water_surface_color": "#ccccff"
+    },                                                
+    
+    //cherry grove
+    "cherry_grove": {
+      "water_surface_color": "#ccccff"
+    }
+    //the end
+        "the_end": {
       "fog_identifier": "newb:fog_the_end"
     }
   }
