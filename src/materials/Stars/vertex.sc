@@ -16,7 +16,7 @@ void main() {
   star = step(0.89, star);
 
   float twinkle = 0.5 + 0.5 * sin(u_time + pos.x * 10.0);
-  color.rgb = float3(star, star, star) * 1.5 * twinkle;
+  color.rgb = vec3(star, star, star) * 1.5 * twinkle;
  
   v_color0 = color;
   gl_Position = mul(u_viewProj, vec4(worldPos, 1.0));
