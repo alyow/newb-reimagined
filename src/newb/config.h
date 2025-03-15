@@ -265,7 +265,7 @@
   #undef NL_NIGHT_HORIZON_COL
   #undef NL_DAWN_HORIZON_COL
   #define NL_DAWN_HORIZON_COL vec3(0.04,0.02,0.0)
-  #define NL_NIGHT_HORIZON_COL vec3(0.0)
+  #define NL_NIGHT_HORIZON_COL vec3(0.0,0.0,0.0)
   #define NL_CLOUD_TYPE 0
 #endif
 
