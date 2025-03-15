@@ -1,5 +1,5 @@
 name = "Newb Reimagined"
-version = [0, 15, 75]
+version = [0, 15, 8]
 min_supported_mc_version = [1, 21, 20]
 description = '''
 §7A shader with a fantasy theme without losing the vanilla minecraft feel
