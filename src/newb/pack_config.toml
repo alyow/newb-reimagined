@@ -1,16 +1,16 @@
-name = "Newb X Legacy"
-version = [0, 15, 0]
+name = "Newb Reimagined"
+version = [0, 15, 75]
 min_supported_mc_version = [1, 21, 20]
 description = '''
-§c%w
-§7- An enchanced vanilla shader for Minecraft!
+§7A shader with a fantasy theme without losing the vanilla minecraft feel
 %v
-§3https://devendrn.github.io/newb-shader/
+§c%w
 ''' # %w = patch warning, %v = version
-authors = ["devendrn"]
+authors = ["alyowv", "devendrn"]
 url = "https://devendrn.github.io/newb-shader/"
 uuid = "95f774cf-4afa-73e7-a21a-72146307b1d2" # Use https://www.uuidgenerator.net/version4
 materials = ["Sky", "RenderChunk", "Actor", "ActorGlint", "EndSky", "Clouds", "SunMoon", "Weather", "ItemInHandTextured", "ItemInHandColor", "ItemInHandColorGlint", "Stars"]
+text = " Recommended:\n§7 Set brightness to 10 - 30\n Put this shader on top if not using an animation pack" 
 
 [info] 
 copyright = '''
@@ -29,50 +29,97 @@ credits = '''
 # right-most subpack is enabled by default
 
 [[subpack]]
-define = "ROUNDED_CLOUDS"
+define = "LOW"
+materials = ["RenderChunk"]
+description = '''
+§aLow
+§7Disable plants wave, glow leak, godrays, lava noise, and reflections
+'''
+
+[[subpack]]
+define = "MEDIUM"
+materials = ["RenderChunk"]
+description = '''
+§2Medium
+§7Disable glow leak, lava noise and reflections
+'''
+
+[[subpack]]
+define = "VANILLA_CLOUDS"
 materials = ["Clouds"]
 description = '''
-Rounded Clouds
+Vanilla Clouds
+§7Vanilla clouds without aurora
 '''
 
 [[subpack]]
-define = "BOX_CLOUDS"
-materials = ["Clouds", "RenderChunk"]
+define = "SOFT_CLOUDS"
+materials = ["RenderChunk", "Clouds"]
 description = '''
-Box Clouds
+Soft Clouds
+§7Soft clouds but cirrus clouds style, no aurora
 '''
 
 [[subpack]]
-define = "CHUNK_ANIM"
-materials = ["RenderChunk"]
+define = "REALISTIC_CLOUDS_A"
+materials = ["Clouds"]
 description = '''
-Chunk loading animation
+Realistic Clouds
+§7Volumetric clouds with aurora §blight blue §upurple§r
 '''
 
 [[subpack]]
-define = "NO_WAVE_NO_FOG"
-materials = ["RenderChunk"]
+define = "REALISTIC_CLOUDS"
+materials = ["Clouds"]
 description = '''
-No fog and wave effects
+Realistic Clouds
+§7Volumetric clouds without aurora
 '''
 
 [[subpack]]
-define = "NO_FOG"
-materials = ["RenderChunk"]
+define = "DOUBLE_CLOUDS"
+materials = ["Clouds"]
 description = '''
-No fog effect
+Double Cloud Layers
+§7Multilayer clouds without aurora
 '''
 
 [[subpack]]
-define = "NO_WAVE"
-materials = ["RenderChunk"]
+define = "ALWAYS_REFL"
+materials = ["RenderChunk", "Sky", "Clouds"]
 description = '''
-No wave effects
+Always Reflection
+§7Ground reflection with aurora reflection
 '''
 
 [[subpack]]
-define = "DEFAULT"
+define = "GALAXY"
+materials = ["RenderChunk", "Sky"]
+description = '''
+Galaxy Star
+§7Galaxy star without aurora
+'''
+
+[[subpack]]
+define = "AURORA2"
+materials = ["RenderChunk", "Clouds"]
+description = '''
+Aurora
+§7Aurora §blight blue §agreen§r
+'''
+
+[[subpack]]
+define = "AURORA1"
+materials = ["RenderChunk", "Clouds"]
+description = '''
+Aurora
+§7Aurora §blight blue §upurple§r
+'''
+
+[[subpack]]
+define = "COMP"
 materials = []
 description = '''
 Default
+§7Rounded clouds without aurora
 '''
