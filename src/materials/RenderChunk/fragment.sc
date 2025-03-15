@@ -1,4 +1,4 @@
-$input v_color0, v_color1, v_fog, v_refl, v_texcoord0, v_lightmapUV, v_extra
+$input v_color0, v_color1, v_fog, v_refl, v_texcoord0, v_lightmapUV, v_extra, v_position
 
 #include <bgfx_shader.sh>
 #include <newb/main.sh>
@@ -8,6 +8,10 @@ SAMPLER2D_AUTOREG(s_SeasonsTexture);
 SAMPLER2D_AUTOREG(s_LightMapTexture);
 
 void main() {
+
+  vec3 dir = normalize(cross(dFdx(v_position), dFdy(v_position)));
+  float dirX = max(dir.x, -dir.x);
+  
   #if defined(DEPTH_ONLY_OPAQUE) || defined(DEPTH_ONLY) || defined(INSTANCING)
     gl_FragColor = vec4(1.0,1.0,1.0,1.0);
     return;
@@ -35,6 +39,8 @@ void main() {
 
   color.rgb *= lightTint;
 
+  diffuse.rgb *= 1.0-0.4*dirX;
+  
   #if defined(TRANSPARENT) && !(defined(SEASONS) || defined(RENDER_AS_BILLBOARDS))
     if (v_extra.b > 0.9) {
       diffuse.rgb = vec3_splat(1.0 - NL_WATER_TEX_OPACITY*(1.0 - diffuse.b*1.8));
