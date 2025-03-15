@@ -48,6 +48,12 @@ def create_pack_manifest(config: dict) -> dict:
                 'version': config['version']
             }
         ],
+        'settings': [
+           {
+               'type': 'label',
+               'text':  config['text'],
+           }
+        ],
         'subpacks': [],
         'metadata': {
             'authors': config['authors'],
