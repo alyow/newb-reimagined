@@ -3,7 +3,8 @@
 
 #include "constants.h"
 
-// functions under [1] are from https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83
+// functions under [1] are from
+// https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83
 
 // [1] hash function for noise (for highp only)
 float rand(highp vec2 n) {

@@ -172,7 +172,7 @@ vec3 nlLavaNoise(vec3 tiledCpos, float t) {
   n = 1.0 - n*n;
   float n2 = n*n;
   n2 *= n2;
-  return vec3(n, n2, n2);
+  return vec3(n*2.7, n*1.1, n*0.7);
 }
 
 #endif
