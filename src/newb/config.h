@@ -157,7 +157,7 @@
 /* Realistic cloud settings */
 #define NL_CLOUD3_SCALE vec2(0.03, 0.02) // 0.003 large ~ 1.0 tiny
 #define NL_CLOUD3_SPEED 0.005            // 0.0 static ~ 4.0 fast moving
-#define NL_CLOUD3_SHADOW 0.96             // 0.1 subtle ~ 1.0 dark
+#define NL_CLOUD3_SHADOW 1.0             // 0.1 subtle ~ 1.0 dark
 #define NL_CLOUD3_SHADOW_OFFSET 0.3      // 0.05 minimal ~ 1.0 
 
 /* Aurora settings */
