@@ -15,7 +15,6 @@ It supports Minecraft Bedrock 1.21+ (Windows & Android).
 <br>
 
 ## Downloads
-[r15.8](https://www.mediafire.com/file/v8sreeesk1wic31/Newb-Reimagined-r15.65-Normal-Merged.mcpack/file) (Newest for 1.21.20+)  
 [Changelogs](https://sites.google.com/view/newb-reimagined/downloads/release?authuser=0)
 
 Nightly builds for Android (ESSL), Windows (DX), and iOS (Metal) can also be found at the [Discord server](https://discord.gg/newb-community-844591537430069279).
