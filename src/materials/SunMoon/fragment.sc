@@ -32,7 +32,7 @@ void main() {
       color.rgb += g*NL_MOON_BLOOM_COL;
       #endif
     } else {
-      g *= 0.6;
+      g *= NL_SUN_BLOOM_INTENSITY;
       uv = 0.5 + 10.0*v_pos.xz;
       #ifdef NL_SUN_BLOOM
       color.rgb += g*NL_SUN_BLOOM_COL;
