@@ -95,9 +95,9 @@ vec3 getSunBloom(float viewDirX, vec3 horizonEdgeCol, vec3 FOG_COLOR) {
   factor *= factor;
   factor *= factor;
 
-  float spread = smoothstep(0.0, 1.0, abs(viewDirX));
+  float spread = smoothstep(0.1, 0.9, abs(viewDirX));
   float sunBloom = spread*spread;
-  sunBloom = 0.5*spread + sunBloom*sunBloom*sunBloom*1.5;
+  sunBloom = 0.3*spread + sunBloom*sunBloom*sunBloom;
 
   return NL_MORNING_SUN_COL*horizonEdgeCol*(sunBloom*factor*factor);
 }
