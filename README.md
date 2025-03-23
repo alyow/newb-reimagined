@@ -10,12 +10,12 @@ It supports Minecraft Bedrock 1.21+ (Windows & Android).
 
 <br>
 
-![Screenshots](docs/screenshots.jpg "Newb X Legacy 15.47, MCBE 1.21.0")
+![Screenshots](docs/screenshots.jpg)
 
 <br>
 
 ## Downloads
-[Changelogs](https://sites.google.com/view/newb-reimagined/downloads/release?authuser=0)
+[r15.8](https://www.mediafire.com/file/s3h3xhoxi0exjbk/Newb-Reimagined-r15.8-Merged.mcpack/file)
 
 Nightly builds for Android (ESSL), Windows (DX), and iOS (Metal) can also be found at the [Discord server](https://discord.gg/newb-community-844591537430069279).
 
