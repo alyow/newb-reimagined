@@ -17,6 +17,8 @@ It supports Minecraft Bedrock 1.21.20+ (Windows & Android).
 ## Downloads
 [Latest Version](https://github.com/alyow/newb-reimagined/releases)
 
+Beta version can be found on our discord server
+
 <br>
 
 ## Installation
@@ -31,7 +33,7 @@ It supports Minecraft Bedrock 1.21.20+ (Windows & Android).
 ### Windows
 1. Use [BetterRenderDragon](https://github.com/QYCottage/BetterRenderDragon) to enable MaterialBinLoader.
 2. Import the resource pack and activate it in global resources.
-3. If BetterRenderDRagon not working on your device use [Matject](https://faizul726.github.io/matject/) instead
+3. If BetterRenderDRagon not working on your device use [Matject](https://faizul726.github.io/matject/) instead.
 
 <br>
 
