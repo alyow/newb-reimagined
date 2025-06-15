@@ -111,7 +111,7 @@ void main() {
   #ifdef NL_FAKE_DEPTH
   if (v_extra.b <= 0.9) {
     vec2 texSize = vec2(textureSize(s_MatTexture, 0));
-    vec2 offset = 1.0 / texSize;
+    vec2 offset = 1.0 / vec2(textureSize(s_MatTexture, 0));
 
     vec3 offsetSample = texture2D(s_MatTexture, v_texcoord0 + offset * 0.1).rgb;
     vec3 fD = (diffuse.rgb - offsetSample) * 1.75;
