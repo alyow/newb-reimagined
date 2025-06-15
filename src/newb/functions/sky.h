@@ -80,7 +80,7 @@ vec3 renderOverworldSky(nl_skycolor skycol, vec3 viewDir) {
   // gradient 2  h^8 mix h^2
   float gradient1 = hsq*hsq;
   gradient1 *= gradient1;
-  float gradient2 = 0.2*gradient1 + 0.2*hsq;
+  float gradient2 = 0.2*gradient1 + 0.3*hsq;
   gradient1 *= gradient1;
 
   vec3 sky = mix(skycol.horizon, skycol.horizonEdge, gradient1);
@@ -95,12 +95,13 @@ vec3 getSunBloom(float viewDirX, vec3 horizonEdgeCol, vec3 FOG_COLOR) {
   factor *= factor;
   factor *= factor;
 
-  float spread = smoothstep(0.1, 0.9, abs(viewDirX));
+  float spread = smoothstep(0.1, 0.8, abs(viewDirX));
   float sunBloom = spread*spread;
-  sunBloom = 0.3*spread + sunBloom*sunBloom*sunBloom;
+  sunBloom = 0.1*spread + sunBloom*sunBloom*sunBloom;
 
   return NL_MORNING_SUN_COL*horizonEdgeCol*(sunBloom*factor*factor);
 }
+
 
 #if NL_END_SKY_TYPE == 1
   vec3 renderEndSky(vec3 horizonCol, vec3 zenithCol, vec3 v, float t){
@@ -110,13 +111,13 @@ vec3 getSunBloom(float viewDirX, vec3 horizonEdgeCol, vec3 FOG_COLOR) {
 
   float a = atan2(v.x,v.z);
 
-  float s = sin(a*15.0 + t);
+  float s = sin(a*28.0 + t);
   s = s*s;
-  s *= 0.2 + 0.52 * sin(a*9.0 - 0.8*t);
-  float mask = smoothstep(1.0, 0.8, sin(a * 3.0 + t * 0.2));
+  s *= 0.0 + 0.33 * sin(a*17.0 - 0.8*t);
+  float mask = smoothstep(1.0, 0.5, sin(a * 5.0 + t * 0.2));
 
-  float g = smoothstep(1.0 - s, -0.7, v.y) * mask;
-
+  float g = smoothstep(0.8 - s, -0.7, v.y) * mask;
+  
   float f = (0.2*g + 0.8*smoothstep(1.0,-0.3,v.y));
   float h = (0.2*g + 0.8*smoothstep(0.9,-1.0,v.y));
 
@@ -300,7 +301,7 @@ vec3 nlRenderGalaxy(vec3 vdir, vec3 fogColor, nl_environment env, float t) {
   vec3 gfcol = normalize(vec3(n0, cos(2.0*vdir.y), sin(vdir.x+n0)));
   stars += (0.4*gf + 0.012)*mix(vec3(0.5, 0.5, 0.5), gfcol*gfcol, NL_GALAXY_VIBRANCE);
 
-  stars *= mix(1.0, NL_GALAXY_DAY_VISIBILITY, min(dot(fogColor, vec3(0.5,0.7,0.5)), 1.0)); // maybe add day factor to env for global use?
+  stars *= mix(1.0, NL_GALAXY_DAY_VISIBILITY, min(dot(fogColor, vec3(0.5,0.58,0.7)), 1.0)); // maybe add day factor to env for global use?
 
   return stars*(1.0-env.rainFactor);
 }

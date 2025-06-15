@@ -90,14 +90,18 @@ vec3 nlLighting(
     light += vec3_splat(0.3*lit.y*uv1.y*(1.2-shadow)*lightIntensity);
 
     // torch light
-    light += torchLight*(1.0-(max(shadow, 0.65*lit.y)*dayFactor*(1.0-0.3*env.rainFactor)));
+    light += torchLight*(1.0-(max(shadow, 0.8*lit.y)*dayFactor*(1.0-0.3*env.rainFactor)));
   }
 
   // darken at crevices
-  light *= COLOR.g > 0.35 ? 1.0 : 0.8;
+    float col_max = max(COLOR.r, max(COLOR.g, COLOR.b));
+
+    if (COLOR.g < 0.4 && col_max < 0.6) {
+    light *= 0.5;
+  }
 
   // brighten tree leaves
-  if (isTree) {
+    if (isTree) {
     light *= 1.25;
   }
 
@@ -150,13 +154,16 @@ vec3 nlEntityLighting(nl_environment env, vec3 pos, vec4 normal, mat4 world, vec
 
   return light;
 }
-
-float nlEntityEdgeHighlight(vec4 edgemap) {
-  vec2 len = min(abs(edgemap.xy),abs(edgemap.zw));
-  len *= len;
-  len *= len;
-  float ambient = len.x + len.y*(1.0-len.x);
-  return NL_ENTITY_BRIGHTNESS + ambient*NL_ENTITY_EDGE_HIGHLIGHT;
+  float nlEntityEdgeHighlight(vec4 edgemap) {
+  #ifdef NL_ENTITY_EDGE_HIGHLIGHT
+    vec2 len = min(abs(edgemap.xy),abs(edgemap.zw));
+    len *= len;
+    len *= len;
+    float ambient = len.x + len.y*(1.0-len.x);
+    return NL_ENTITY_BRIGHTNESS + ambient*NL_ENTITY_EDGE_HIGHLIGHT;
+  #else
+    return 1.0;
+  #endif
 }
 
 vec4 nlEntityEdgeHighlightPreprocess(vec2 texcoord) {
@@ -164,15 +171,14 @@ vec4 nlEntityEdgeHighlightPreprocess(vec2 texcoord) {
   return 2.0*step(edgeMap, vec4_splat(0.5)) - 1.0;
 }
 
-vec3 nlLavaNoise(vec3 tiledCpos, float t) {
+vec4 nlLavaNoise(vec3 tiledCpos, float t) {
   t *=  NL_LAVA_NOISE_SPEED;
-  float n = fastVoronoi2(1.12*tiledCpos.xz + t, 1.8);
-  n *= fastVoronoi2(4.48*tiledCpos.xz + t, 1.5);
-  n = 1.0 - n*n*n;
-  n = 1.0 - n*n;
-  float n2 = n*n;
-  n2 *= n2;
-  return vec3(n*2.7, n*1.1, n*0.7);
+  vec3 p = NL_CONST_PI_HALF*tiledCpos;
+  float d = fastVoronoi2(4.3*tiledCpos.xz + t, 2.0);
+  float n = sin(2.0*(p.x+p.y+p.z) + 1.7*sin(2.0*d + 4.0*(p.x-p.z)) + 4.0*t);
+  n = 0.3*d*d +  0.7*n*n;
+  n *= n;
+  return vec4(mix(vec3(0.31, 0.19, 0.05), vec3_splat(1.5), n),n);
 }
 
 #endif
