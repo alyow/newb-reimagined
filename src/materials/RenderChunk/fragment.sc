@@ -32,10 +32,10 @@ uniform vec4 FogColor;
   vec3 getNormal(sampler2D TEXTURE_0, vec2 coord) {
   float offsets = 1.0 / float(RESOLUTION) / 32.0;
 
-    float lumR = luminance601(textureLod(TEXTURE_0, coord + vec2(offsets, 0.0), 0.0).rgb);
-    float lumL = luminance601(textureLod(TEXTURE_0, coord - vec2(offsets, 0.0), 0.0).rgb);
-    float lumD = luminance601(textureLod(TEXTURE_0, coord + vec2(0.0, offsets), 0.0).rgb);
-    float lumU = luminance601(textureLod(TEXTURE_0, coord - vec2(0.0, offsets), 0.0).rgb);
+   float lumR = luminance601(tex2D(TEXTURE_0, coord + float2(offsets, 0.0)).rgb);
+   float lumL = luminance601(tex2D(TEXTURE_0, coord - float2(offsets, 0.0)).rgb);
+   float lumD = luminance601(tex2D(TEXTURE_0, coord + float2(0.0, offsets)).rgb);
+   float lumU = luminance601(tex2D(TEXTURE_0, coord - float2(0.0, offsets)).rgb);
 
   vec2 gradient = vec2(lumR - lumL, lumD - lumU);
   float lenSq = dot(gradient, gradient);
