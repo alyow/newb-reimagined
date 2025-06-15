@@ -1,20 +1,20 @@
 name = "Newb Reimagined"
-version = [0, 15, 8]
+version = [0, 16, 0]
 min_supported_mc_version = [1, 21, 20]
 description = '''
-§7A shader with a fantasy theme without losing the vanilla minecraft feel
+§7A shader with a fantasy theme without losing the vanilla minecraft feel.
 %v
 §c%w
 ''' # %w = patch warning, %v = version
 authors = ["alyowv", "devendrn"]
 url = "https://devendrn.github.io/newb-shader/"
-uuid = "95f774cf-4afa-73e7-a21a-72146307b1d2" # Use https://www.uuidgenerator.net/version4
+uuid = "96f0bc06-7515-4fe0-83de-c61657271875" # Use https://www.uuidgenerator.net/version4
 materials = ["Sky", "RenderChunk", "Actor", "ActorGlint", "EndSky", "Clouds", "SunMoon", "Weather", "ItemInHandTextured", "ItemInHandColor", "ItemInHandColorGlint", "Stars"]
-text = " Recommended:\n§7 Set brightness to 10 - 30\n Put this shader on top if not using an animation pack" 
+text = " Recommended Settings:\n§7 Set brightness to 10 - 30§r\n\n Info!\n §7Shader are not officially supported on vanilla MCBE!\n You need a shader loader or a modified client\n for Minecraft Bedrock. Some devices will also experience\n cloud-cutting bugs.§r" 
 
 [info] 
 copyright = '''
-Copyright © 2024 %a, and "Newb Shader" Contributors
+Copyright © 2025 %a, and "Newb Shader" Contributors
 
 This compiled "Newb Shader" resource pack (source code: https://github.com/devendrn/newb-x-mcbe under MIT License) is licensed under CC BY-ND 4.0 (https://creativecommons.org/licenses/by-nd/4.0/). Redistribute only unmodified copies with proper attribution to "Newb Shader" and variant creators (if any). Do not distribute derivatives.
 
@@ -33,14 +33,14 @@ define = "LOW"
 materials = ["RenderChunk"]
 description = '''
 §aLow
-§7Disable plants wave, glow leak, godrays, lava noise, and reflections
+§7Disable plants wave, glow leak and many more!
 '''
 
 [[subpack]]
-define = "MEDIUM"
+define = "PERFORMANCE"
 materials = ["RenderChunk"]
 description = '''
-§2Medium
+§2Performance
 §7Disable glow leak, lava noise and reflections
 '''
 
@@ -53,43 +53,11 @@ Vanilla Clouds
 '''
 
 [[subpack]]
-define = "SOFT_CLOUDS"
-materials = ["RenderChunk", "Clouds"]
-description = '''
-Soft Clouds
-§7Soft clouds but cirrus clouds style, no aurora
-'''
-
-[[subpack]]
-define = "REALISTIC_CLOUDS_A"
-materials = ["Clouds"]
-description = '''
-Realistic Clouds
-§7Volumetric clouds with aurora §blight blue §upurple§r
-'''
-
-[[subpack]]
-define = "REALISTIC_CLOUDS"
-materials = ["Clouds"]
-description = '''
-Realistic Clouds
-§7Volumetric clouds without aurora
-'''
-
-[[subpack]]
 define = "DOUBLE_CLOUDS"
 materials = ["Clouds"]
 description = '''
 Double Cloud Layers
 §7Multilayer clouds without aurora
-'''
-
-[[subpack]]
-define = "ALWAYS_REFL"
-materials = ["RenderChunk", "Sky", "Clouds"]
-description = '''
-Always Reflection
-§7Ground reflection with aurora reflection
 '''
 
 [[subpack]]
@@ -117,7 +85,15 @@ Aurora
 '''
 
 [[subpack]]
-define = "COMP"
+define = "FAKE_DEPTH"
+materials = ["RenderChunk"]
+description = '''
+Fake Depth
+§7Enable fake depth and block reflection
+'''
+
+[[subpack]]
+define = "DEF"
 materials = []
 description = '''
 Default
