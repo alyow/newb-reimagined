@@ -2,7 +2,7 @@ $input a_color0, a_position, a_texcoord0, a_texcoord1
 #ifdef INSTANCING
   $input i_data0, i_data1, i_data2, i_data3
 #endif
-$output v_color0, v_color1, v_fog, v_refl, v_texcoord0, v_lightmapUV, v_extra, v_position
+$output v_color0, v_color1, v_fog, v_refl, v_texcoord0, v_lightmapUV, v_extra, v_position, v_wpos
 
 #include <bgfx_shader.sh>
 #include <newb/main.sh>
@@ -23,6 +23,10 @@ void main() {
 
   #if !(defined(DEPTH_ONLY_OPAQUE) || defined(DEPTH_ONLY) || defined(INSTANCING))
 
+  #ifdef NL_CHUNK_LOAD_ANIM
+    worldPos.y -= NL_CHUNK_LOAD_ANIM*RenderChunkFogAlpha.x*RenderChunkFogAlpha.x*RenderChunkFogAlpha.x;
+  #endif
+
   #ifdef RENDER_AS_BILLBOARDS
     worldPos += vec3(0.5,0.5,0.5);
 
@@ -36,7 +40,7 @@ void main() {
                  (boardPlane * (a_color0.x - 0.5));
     vec4 color = vec4(1.0,1.0,1.0,1.0);
   #else
-    vec3 modelCamPos = (ViewPositionAndTime.xyz - worldPos);
+    vec3 modelCamPos = ViewPositionAndTime.xyz - worldPos;
     float camDis = length(modelCamPos);
     vec3 viewDir = modelCamPos / camDis;
 
@@ -88,18 +92,13 @@ void main() {
     nlWave(worldPos, light, env.rainFactor, uv1, lit, a_texcoord0, bPos, a_color0, cPos, tiledCpos, t, isColored, camDis, isTree);
   #endif
 
-  #ifdef NL_CHUNK_LOAD_ANIM
-    // slide in anim
-    worldPos.y -= NL_CHUNK_LOAD_ANIM*pow(RenderChunkFogAlpha.x,3.0);
-  #endif
-
   // loading chunks
   relativeDist += RenderChunkFogAlpha.x;
 
   vec4 fogColor;
   fogColor.rgb = nlRenderSky(skycol, env, viewDir, FogColor.rgb, t);
   fogColor.a = nlRenderFogFade(relativeDist, FogColor.rgb, FogAndDistanceControl.xy);
-  #ifdef NL_GODRAY 
+  #ifdef NL_GODRAY
     fogColor.a = mix(fogColor.a, 1.0, NL_GODRAY*nlRenderGodRayIntensity(cPos, worldPos, t, uv1, relativeDist, FogColor.rgb));
   #endif
 
@@ -130,7 +129,6 @@ void main() {
   #endif
 
   vec4 pos = mul(u_viewProj, vec4(worldPos, 1.0));
-
   #ifdef NL_RAIN_MIST_OPACITY
     if (env.rainFactor > 0.0) {
       float humidAir = env.rainFactor*lit.y*lit.y*nlWindblow(pos.xyz, t);
@@ -144,21 +142,21 @@ void main() {
 
   color.rgb *= light;
 
-  #if defined(NL_GLOW_SHIMMER) && !(defined(RENDER_AS_BILLBOARDS) || defined(OPAQUE))
+  #if defined(NL_GLOW_SHIMMER) && !(defined(RENDER_AS_BILLBOARDS) || defined(SEASONS))
     float shimmer = nlGlowShimmer(cPos, t);
   #else
-    float shimmer = 0.0;
+    float shimmer = 1.0;
   #endif
-  
+
   #ifdef NL_LAVA_NOISE
     bool isc = (a_color0.r+a_color0.g+a_color0.b) > 2.999;
     bool isb = bPos.y < 0.891 && bPos.y > 0.889;
     if (isc && isb && (uv1.x > 0.81 && uv1.x < 0.876) && a_texcoord0.y > 0.45) {
-      vec3 lava = nlLavaNoise(tiledCpos, t);
+      vec4 lava = nlLavaNoise(tiledCpos, t);
       #ifdef NL_LAVA_NOISE_BUMP
-        worldPos.y += NL_LAVA_NOISE_BUMP*lava.r;
+        worldPos.y += NL_LAVA_NOISE_BUMP*lava.a;
       #endif
-      color.rgb *= lava;
+      color.rgb *= lava.rgb;
     }
   #endif
 
@@ -169,8 +167,8 @@ void main() {
   v_color0 = color;
   v_color1 = a_color0;
   v_fog = fogColor;
-  v_position = a_position; 
-  
+  v_position = a_position;
+  v_wpos = worldPos.xyz;
   #else
 
   vec4 pos = mul(u_viewProj, vec4(worldPos, 1.0));
