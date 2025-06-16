@@ -216,9 +216,10 @@
 #define NL_LAVA_NOISE_SPEED 0.04 // 0.0 still ~ 0.1 fast
 
 /* Misc */
-//#define NL_FAKE_DEPTH 				// [toggle] 
-#define NL_FAKE_DEPTH_VALUE 0.2 	
-//#define NL_BLOCK_REFL
+//#define NL_FAKE_DEPTH 				  // [toggle] 
+#define NL_FAKE_DEPTH_VALUE 0.2 	// 
+//#define NL_BLOCK_REFL           // [toggle]
+#define NL_DIRLIGHT               //
 
 /*
   NEWB SHADER SUBPACK CONFIG
@@ -247,6 +248,7 @@
   #undef NL_WEATHER_SPECK
   #undef NL_GROUND_RAIN_PUDDLES
   #undef NL_GROUND_RAIN_WETNESS
+  #undef NL_DIRLIGHT
   #define NL_WATER_BUMP 0.0
   #define NL_GROUND_RAIN_PUDDLES 0.0
   #define NL_GROUND_RAIN_WETNESS 0.1
@@ -261,6 +263,7 @@
   #undef NL_WATER_WAVE
   #undef NL_WATER_BUMP
   #undef NL_WATER_CLOUD_REFLECTION
+  #undef NL_DIRLIGHT
   #define NL_WATER_BUMP 0.0
   #define NL_GROUND_RAIN_PUDDLES 0.0
   #define NL_GROUND_RAIN_WETNESS 0.1
