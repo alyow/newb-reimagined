@@ -62,8 +62,10 @@ uniform vec4 FogColor;
 
 void main() {
 
+  #ifdef NL_DIRLIGHT
   vec3 dir = normalize(cross(dFdx(v_position), dFdy(v_position)));
   float dirX = max(dir.x, -dir.x);
+  #endif
   
   #if defined(DEPTH_ONLY_OPAQUE) || defined(DEPTH_ONLY) || defined(INSTANCING)
     gl_FragColor = vec4(1.0,1.0,1.0,1.0);
@@ -129,8 +131,10 @@ void main() {
   lightTint = mix(lightTint.bbb, lightTint*lightTint, 0.35 + 0.65*v_lightmapUV.y*v_lightmapUV.y*v_lightmapUV.y);
 
   color.rgb *= lightTint;
-  
+
+  #ifdef NL_DIRLIGHT
   diffuse.rgb *= 1.0-0.4*dirX;
+  #endif
   
   #if defined(TRANSPARENT) && !(defined(SEASONS) || defined(RENDER_AS_BILLBOARDS))
     if (v_extra.b > 0.9) {
