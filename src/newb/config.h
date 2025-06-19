@@ -95,6 +95,7 @@
 
 /* Waving */
 #define NL_PLANTS_WAVE 0.051    // [toggle] 0.02 gentle ~ 0.4 violent
+#define NL_PLANTS_SHADING 1.8   // 1.2 is the default value
 #define NL_LANTERN_WAVE 0.18    // [toggle] 0.05 subtle ~ 0.4 large swing
 #define NL_WAVE_SPEED 2.67      // 0.5 slow wave ~ 5.0 very fast wave
 //#define NL_EXTRA_PLANTS_WAVE  // [toggle] !dont use! wave using texture coords (1.21.0 vanilla 2048x1024)
@@ -248,7 +249,9 @@
   #undef NL_WEATHER_SPECK
   #undef NL_GROUND_RAIN_PUDDLES
   #undef NL_GROUND_RAIN_WETNESS
-  #undef NL_DIRLIGHT
+  #undef NL_PLANTS_SHADING 
+  #undef NR_DIRLIGHT
+  #define NL_PLANTS_SHADING 1.4
   #define NL_WATER_BUMP 0.0
   #define NL_GROUND_RAIN_PUDDLES 0.0
   #define NL_GROUND_RAIN_WETNESS 0.1
@@ -263,7 +266,9 @@
   #undef NL_WATER_WAVE
   #undef NL_WATER_BUMP
   #undef NL_WATER_CLOUD_REFLECTION
-  #undef NL_DIRLIGHT
+  #undef NR_DIRLIGHT
+  #undef NL_PLANTS_SHADING
+  #define NL_PLANTS_SHADING 1.4
   #define NL_WATER_BUMP 0.0
   #define NL_GROUND_RAIN_PUDDLES 0.0
   #define NL_GROUND_RAIN_WETNESS 0.1
@@ -278,10 +283,10 @@
   #undef NL_NIGHT_HORIZON_COL
   #undef NL_DAWN_HORIZON_COL
   #undef NL_DAY_HORIZON_COL
+  #define NL_CLOUD_TYPE 0
   #define NL_DAY_HORIZON_COL   vec3(0.3,0.3,0.31)
   #define NL_DAWN_HORIZON_COL  vec3(0.04,0.02,0.0)
   #define NL_NIGHT_HORIZON_COL vec3(0.0,0.0,0.0)
-  #define NL_CLOUD_TYPE 0
 #endif
 
 #ifdef DOUBLE_CLOUDS
@@ -311,8 +316,8 @@
 
 #ifdef FAKE_DEPTH
   #undef NL_GLOW_LEAK
-  #define NL_FAKE_DEPTH
-  #define NL_BLOCK_REFL
+  #define NR_FAKE_DEPTH
+  #define NR_BLOCK_REFL
 #endif
 
 #ifdef DEF
