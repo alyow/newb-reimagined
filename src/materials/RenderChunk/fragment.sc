@@ -62,7 +62,7 @@ uniform vec4 FogColor;
 
 void main() {
 
-  #ifdef NL_DIRLIGHT
+  #ifdef NR_DIRLIGHT
   vec3 dir = normalize(cross(dFdx(v_position), dFdy(v_position)));
   float dirX = max(dir.x, -dir.x);
   #endif
@@ -110,7 +110,7 @@ void main() {
     diffuse.rgb *= mix(vec3(1.0,1.0,1.0), texture2D(s_SeasonsTexture, v_color1.xy).rgb * 2.0, v_color1.z);
   #endif
   
-  #ifdef NL_FAKE_DEPTH
+  #ifdef NR_FAKE_DEPTH
   if (v_extra.b <= 0.9) {
     vec2 texSize = vec2(textureSize(s_MatTexture, 0));
     vec2 offset = 1.0 / vec2(textureSize(s_MatTexture, 0));
@@ -118,7 +118,7 @@ void main() {
     vec3 offsetSample = texture2D(s_MatTexture, v_texcoord0 + offset * 0.1).rgb;
     vec3 fD = (diffuse.rgb - offsetSample) * 1.75;
 
-    diffuse.rgb += fD * NL_FAKE_DEPTH_VALUE;
+    diffuse.rgb += fD * NR_FAKE_DEPTH_VALUE;
     diffuse.rgb = clamp(diffuse.rgb, 0.0, 1.0);
   }
 #endif
@@ -132,7 +132,7 @@ void main() {
 
   color.rgb *= lightTint;
 
-  #ifdef NL_DIRLIGHT
+  #ifdef NR_DIRLIGHT
   diffuse.rgb *= 1.0-0.4*dirX;
   #endif
   
@@ -183,7 +183,7 @@ void main() {
  
   vec3 reflection = skyColor;
 
-  #ifdef NL_BLOCK_REFL
+  #ifdef NR_BLOCK_REFL
   if (reflective) {
 
   diffuse.rgb *= 1.0 - F0;

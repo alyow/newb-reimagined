@@ -216,10 +216,10 @@
 #define NL_LAVA_NOISE_SPEED 0.04 // 0.0 still ~ 0.1 fast
 
 /* Misc */
-//#define NL_FAKE_DEPTH 				  // [toggle] 
-#define NL_FAKE_DEPTH_VALUE 0.2 	// 
-//#define NL_BLOCK_REFL           // [toggle]
-#define NL_DIRLIGHT               //
+//#define NR_FAKE_DEPTH 				  // [toggle] 
+#define NR_FAKE_DEPTH_VALUE 0.2 	// 
+//#define NR_BLOCK_REFL           // [toggle]
+#define NR_DIRLIGHT               //
 
 /*
   NEWB SHADER SUBPACK CONFIG
