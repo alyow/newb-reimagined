@@ -269,6 +269,10 @@
   #define NL_GROUND_RAIN_WETNESS 0.1
 #endif
 
+#ifdef NO_WAVE
+  #undef NL_PLANTS_WAVE
+#endif
+
 #ifdef VANILLA_CLOUDS
   #undef NL_CLOUD_TYPE
   #undef NL_NIGHT_HORIZON_COL
