@@ -45,6 +45,14 @@ description = '''
 '''
 
 [[subpack]]
+define = "NO_WAVE"
+materials = ["RenderChunk"]
+description = '''
+No Plants Wave
+§7Just disable plants wave
+'''
+
+[[subpack]]
 define = "VANILLA_CLOUDS"
 materials = ["Clouds"]
 description = '''
