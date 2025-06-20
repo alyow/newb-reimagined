@@ -10,7 +10,7 @@ authors = ["alyowv", "devendrn"]
 url = "https://devendrn.github.io/newb-shader/"
 uuid = "96f0bc06-7515-4fe0-83de-c61657271875" # Use https://www.uuidgenerator.net/version4
 materials = ["Sky", "RenderChunk", "Actor", "ActorGlint", "EndSky", "Clouds", "SunMoon", "Weather", "ItemInHandTextured", "ItemInHandColor", "ItemInHandColorGlint", "Stars"]
-text = " Recommended Settings:\n§7 Set brightness to 10 - 30§r\n\n Info!\n §7Shader are not officially supported on vanilla MCBE!\n You need a shader loader or a modified client\n for Minecraft Bedrock. Some devices will also experience\n cloud-cutting bugs.§r" 
+text = " Recommended Settings:\n§7 Set brightness to 10 - 50§r\n\n Info!\n §7Shader are not officially supported on vanilla MCBE!\n You need a shader loader or a modified client\n for Minecraft Bedrock. Some devices will also experience\n cloud-cutting bugs.§r" 
 
 [info] 
 copyright = '''

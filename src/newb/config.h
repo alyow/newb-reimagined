@@ -152,7 +152,7 @@
 #define NL_CLOUD2_LAYER2_DENSITY 45.0             // 1.0 blurry ~ 100.0 sharp
 #define NL_CLOUD2_LAYER2_VELOCITY 0.8             // 0.0 static ~ 4.0 very fast
 #define NL_CLOUD2_BRIGHTNESS 0.95
-#define NL_CLOUD2_SHADOW_INTENSITY 1.092
+#define NL_CLOUD2_SHADOW_INTENSITY 1.095
 #define NL_CLOUD2_NIGHT_INTENSITY 1.0
 
 /* Realistic cloud settings */
