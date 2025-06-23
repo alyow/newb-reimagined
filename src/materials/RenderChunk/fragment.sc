@@ -186,8 +186,10 @@ void main() {
   #ifdef NR_BLOCK_REFL
   if (reflective) {
 
-  diffuse.rgb *= 1.0 - F0;
-  diffuse.rgb = mix(diffuse.rgb, reflection, diffuse.a * fresnel);
+    if (worldNormal.y > -0.2) {
+    diffuse.rgb *= 1.0 - F0;
+    diffuse.rgb = mix(diffuse.rgb, reflection, diffuse.a * fresnel);
+    }
   }
   #endif
   
