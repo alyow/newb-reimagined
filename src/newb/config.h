@@ -203,8 +203,8 @@
 //#define NL_GROUND_AURORA_REFL    // [toggle] aurora reflection on ground
 
 /* Entity (Actor, ItemInHand) */
-#define NL_ENTITY_BRIGHTNESS     0.53 // 0.1 dark ~ 1.6 bright
-//#define NL_ENTITY_EDGE_HIGHLIGHT 0.0  // [toggle] 0.0 no highlight ~ 1.6 bright highlight
+#define NL_ENTITY_BRIGHTNESS     0.50 // 0.1 dark ~ 1.6 bright
+#define NL_ENTITY_EDGE_HIGHLIGHT 0.0  // [toggle] 0.0 no highlight ~ 1.6 bright highlight
 
 /* Weather particles */
 #define NL_WEATHER_SPECK 0.08         // [toggle] 0.0 vanilla texture ~ 1.0 soft speck
