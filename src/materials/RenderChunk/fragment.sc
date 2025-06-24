@@ -161,10 +161,6 @@ void main() {
     }
   }
   
-  vec3 viewDir = normalize(v_wpos);
-viewDir = reflect(viewDir, worldNormal);
-
-float skyWeight = smoothstep(0.0, 0.15, viewDir.y);
 
 nl_environment env = nlDetectEnvironment(FogColor.rgb, FogAndDistanceControl.xyz);
 
@@ -175,19 +171,26 @@ if (env.underwater) {
     skycol = nlOverworldSkyColors(env.rainFactor, FogColor.rgb);
 }
 
-vec3 skyColor = getSkyRefl(skycol, env, viewDir, FogColor.rgb, ViewPositionAndTime.w);
-skyColor *= skyWeight; 
-
 float glossstrength = 0.5;
+
 vec3 F0 = mix(vec3(0.04, 0.04, 0.04), texcol.rgb, glossstrength);
 float spec = 0.0;
 float fresnel = pow(1.0 - dot(V, worldNormal), 5.0);
 
-vec3 reflection = skyColor;
-
 #ifdef NR_BLOCK_REFL
 if (reflective) {
+
     if (worldNormal.y > -0.2) {
+        vec3 viewDir = normalize(v_wpos);
+        viewDir = reflect(viewDir, worldNormal);
+
+        float skyWeight = smoothstep(0.0, 0.15, viewDir.y);
+        
+        vec3 skyColor = getSkyRefl(skycol, env, viewDir, FogColor.rgb, ViewPositionAndTime.w);
+        skyColor *= skyWeight; 
+
+        vec3 reflection = skyColor;
+
         diffuse.rgb *= 1.0 - F0;
         diffuse.rgb = mix(diffuse.rgb, reflection, diffuse.a * fresnel);
     }
