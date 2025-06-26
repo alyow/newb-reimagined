@@ -14,6 +14,7 @@ It supports Minecraft Bedrock 1.21.20+ (Windows & Android).
 
 ## Downloads
 [Latest Version](https://github.com/alyow/newb-reimagined/releases)
+
 Beta version can be found on our discord server
 
 <br>
