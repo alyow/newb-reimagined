@@ -1,6 +1,6 @@
 # Newb Reimagined
 
-**Newb Reimagined** is a shader for Minecraft Bedrock, based on [Newb X Legacy](https://github.com/devendrn/newb-x-mcbe). It prioritizes soft lighting, less saturated colors, and a more aesthetic look. Inspired by Complementary Reimagined shader in Minecraft Java. Supports Minecraft Bedrock 1.21.20+ (Windows & Android). Created by alyowv.
+**Newb Reimagined** is a shader for Minecraft Bedrock, based on [Newb X Legacy](https://github.com/devendrn/newb-x-mcbe). It prioritizes soft lighting, less saturated colors, and a more aesthetic look. Inspired by Complementary Reimagined shader from Minecraft Java. Supports Minecraft Bedrock 1.21.20+ (Windows & Android). Created by alyowv.
 
 <br>
 
