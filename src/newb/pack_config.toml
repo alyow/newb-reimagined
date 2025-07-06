@@ -73,7 +73,7 @@ define = "GALAXY"
 materials = ["RenderChunk", "Sky"]
 description = '''
 Galaxy Star
-§7Galaxy star without aurora
+§7Galaxy star with shooting stars
 '''
 
 [[subpack]]
