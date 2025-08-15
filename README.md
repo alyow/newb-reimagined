@@ -1,23 +1,3 @@
-# Newb Reimagined
-
-**Newb Reimagined** is a shader for Minecraft Bedrock, based on [Newb X Legacy](https://github.com/devendrn/newb-x-mcbe) with features like better clouds, clear water, and more colorful auroras! 
-Created by alyowv.
-
-This shader prioritizes aesthetics, soft lighting, and less saturated color. Inspired by Complementary Reimagined Shader for Minecraft Java.
-It supports Minecraft Bedrock 1.21.20+ (Windows & Android).
-
-<br>
-
-![Screenshots](docs/screenshots.jpg)
-
-<br>
-
-## Downloads
-[Latest Version](https://github.com/alyow/newb-reimagined/releases)
-Beta version can be found on our discord server
-
-<br>
-
 ## Installation
 
 > [!NOTE]
