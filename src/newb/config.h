@@ -166,6 +166,7 @@
 #define NL_AURORA_VELOCITY 0.04   // 0.0 static ~ 0.3 very fast
 #define NL_AURORA_SCALE 0.08      // 0.002 large ~ 0.4 tiny
 #define NL_AURORA_WIDTH 0.1       // 0.04 thin line ~ 0.4 thick lines
+#define NL_AURORA_REFL 3.0        // aurora reflection intensity
 #define NL_AURORA_COL1 vec3(0.16,0.01,0.38)
 #define NL_AURORA_COL2 vec3(0.12,0.92,0.89)
 
@@ -218,7 +219,7 @@
 
 /* Misc */
 //#define NR_FAKE_DEPTH 				  // [toggle] 
-#define NR_FAKE_DEPTH_VALUE 0.2 	// 
+#define NR_FAKE_DEPTH_VALUE 0.35 	// 
 //#define NR_BLOCK_REFL           // [toggle]
 #define NR_DIRLIGHT               //
 
